@@ -2,6 +2,18 @@ var db = require("../config/db");
 
 const PostModel = {};
 
+/**
+ * Methods for creating and getting (search, recent posts, posts by id) posts.
+ * MySQL statements for pushing and pulling comments connected posts into the db.
+ * This can be used as a template for posting music and searching for recent or related music
+ * @param {*} title
+ * @param {*} description
+ * @param {*} photopath
+ * @param {*} thumbnail
+ * @param {*} fk_userId
+ * @returns
+ */
+
 PostModel.create = (title, description, photopath, thumbnail, fk_userId) => {
   let baseSQL =
     "INSERT INTO posts (title, description, photopath, thumbnail, created, fk_userId) VALUE (?,?,?,?,now(),?);";

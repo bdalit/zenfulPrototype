@@ -1,6 +1,14 @@
 var db = require("../config/db");
 const CommentModel = {};
 
+/**
+ * Methods for commenting on posts. MySQL statements for pushing and pulling comments connected posts into the db
+ * @param {*} userId
+ * @param {*} postId
+ * @param {*} comment
+ * @returns
+ */
+
 CommentModel.create = (userId, postId, comment) => {
   let baseSQL = `INSERT INTO comments (comment, fk_postId, fk_authorId) VALUES (?,?,?);`;
   return db

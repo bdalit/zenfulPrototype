@@ -2,6 +2,17 @@ var db = require("../config/db");
 var bcrypt = require("bcrypt");
 const UserModel = {};
 
+/**
+ * User Models contains the methods for creating a user, checking if a username exists, and authenticating a user log in
+ * Pushes and pulls from the database
+ * db name in MySQL statements must be changed
+ * May need to add first name and last name as entries
+ *
+ * @param {*} username
+ * @param {*} password
+ * @param {*} email
+ * @returns
+ */
 UserModel.create = (username, password, email) => {
   return bcrypt
     .hash(password, 15)
