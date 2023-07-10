@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.navbar-header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: beige;
+    opacity: 0.85;
+    align-items: center;
+    color: beige;
+}
+.navbar-ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    min-height: 40px;
+    min-width: 200px;
+    align-items: center;
+}
+.zen-img {
+    position: absolute;
+    right: 97%;
+}

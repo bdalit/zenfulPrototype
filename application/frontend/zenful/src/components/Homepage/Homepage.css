@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.homepage-bg {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-size: cover;
+}
+.homepage-button {
+    padding: 30px 75px;
+    background-color: transparent;
+    border: 1px beige solid;
+    opacity: 0.6;
+    font-size: 0.9em;
+    position: absolute;
+    top: 65%;
+    left: 40%;
+}
+.homepage-button a {
+    color: beige;
+    text-decoration: none;
+}
+.homepage-button:hover {
+    background-color: #ebb5dd;
+    transition: background-color 2s ease-out;
+    cursor: pointer;
+    border: 1px #ebb5dd solid;
+}
