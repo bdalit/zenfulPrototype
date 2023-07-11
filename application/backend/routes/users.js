@@ -15,8 +15,8 @@ router.get("/", function (res) {
   res.send("respond with a resource");
 });
 
-router.use("/register", registerValidator);
-router.post("/register", (req, res, next) => {
+router.use("/signup", registerValidator);
+router.post("/signup", (req, res, next) => {
   console.log(req.body);
   let username = req.body.username;
   let password = req.body.password;
@@ -32,7 +32,7 @@ router.post("/register", (req, res, next) => {
       if (userDoesExists) {
         throw new UserError(
           "Registration Failed: Username already exists",
-          "/registration",
+          "/signup",
           200
         );
       } else {
@@ -42,8 +42,8 @@ router.post("/register", (req, res, next) => {
     .then((emailDoesExists) => {
       if (emailDoesExists) {
         throw new UserError(
-          "Registration Failed: Email already exists",
-          "/registration",
+          "signup Failed: Email already exists",
+          "/signup",
           200
         );
       } else {
@@ -54,7 +54,7 @@ router.post("/register", (req, res, next) => {
       if (createdUserId < 0) {
         throw new UserError(
           "Server Error, user could not be created",
-          "/registration",
+          "/signup",
           500
         );
       } else {
