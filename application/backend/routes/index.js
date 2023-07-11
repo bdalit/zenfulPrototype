@@ -17,8 +17,8 @@ router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
-router.get("/registration", (req, res, next) => {
-  res.render("registration");
+router.get("/signup", (req, res, next) => {
+  res.render("signup");
 });
 
 router.use("/postimage", isLoggedIn);

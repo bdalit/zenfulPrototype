@@ -19,7 +19,7 @@ const registerValidator = (req, res, next) => {
     if(!checkUsername(username)){
         req.flash('error',"invalid username!!!");
         req.session.save(err => {
-            res.redirect("/registration");
+            res.redirect("/signup");
         })
     }else{
         next();
