@@ -3,7 +3,12 @@ import axios from "axios";
 import { useNavigate} from 'react-router-dom'
 import './SignUpForm.css';
 import Navbar from '../Navbar/Navbar'
-
+var express = require("express");
+var router = express.Router();
+const { errorPrint, successPrint } = require("../helpers/debug/debugprinters");
+const UserModel = require("../models/Users");
+const UserError = require("../helpers/error/UserError");
+const { registerValidator } = require("../middleware/validation");
 
 const SignUpForm = () => {
 
@@ -29,7 +34,9 @@ const SignUpForm = () => {
             setErrors(errorArr)
         })
   }
-
+  router.get("/", function (res) {
+    res.send("respond with a resource");
+  });
   return(
     <form className="signupform" id="form" method="POST" encType="application/x-www-form-urlencoded">
     <label htmlFor="username">Username</label>
